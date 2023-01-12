@@ -9,42 +9,96 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 
     <title>Subcode Africa</title>
 </head>
 
 <body>
     <!-- Navbar -->
-    <header class="shadow py-2 font-inter">
-        <nav class="mx-[6%] my-4 flex items-center justify-between">
-            <div>
-                <a href="#" class="font-roboto font-bold text-[0px]">
-                    <span class="text-yellow text-2xl">Sub</span>
-                    <span class="text-2xl">Code</span>
-                </a>
+    <header x-data="{open:false}" class="relative shadow py-2 font-inter">
+        <nav aria-label="main-nav" class="mx-[6%] my-4 flex items-center justify-between">
+            <a href="#" aria-label="Subcode Logo" class="font-roboto font-bold text-[0px]">
+                <span class="text-yellow text-2xl">Sub</span>
+                <span class="text-2xl">Code</span>
+            </a>
+
+            <!-- Large Sreen Nav Items -->
+            <ul class="hidden md:flex items-center  space-x-8 lg:space-x-16">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Service</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Btn -->
+            <button aria-label="hamburger-menu-btn" class="md:hidden cursor-pointer" @click="open = true">
+                <div class="space-y-2">
+                    <div class="w-8 h-0.5 bg-gray-600"></div>
+                    <div class="w-8 h-0.5 bg-gray-600"></div>
+                    <div class="w-8 h-0.5 bg-gray-600"></div>
+                </div>
+            </button>
+
+            <!-- Small Sreen Nav Items -->
+            <div
+                class="md:hidden absolute top-0 left-0 z-10 transform duration-300  pl-[10%] bg-[#fbfbf9] shadow-lg w-1/2 h-screen"
+                :class="open ? 'translate-x-0 ease-in' : '-translate-x-full ease-out opacity-0'" x-cloak
+                >
+                <div class="flex justify-between pt-8">
+                    <a href="#" aria-label="Subcode Logo" class="font-roboto font-bold text-[0px]">
+                        <span class="text-yellow text-xl">Sub</span>
+                        <span class="text-xl">Code</span>
+                    </a>
+                    <button aria-label="close-menu" class="inline-block pr-[10%]" @click="open = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="flex flex-col space-y-8 pt-8">
+                    <li>
+                        <a @click="open = false" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a @click="open = false" href="./about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a @click="open = false" href="#">Service</a>
+                    </li>
+                    <li>
+                        <a @click="open = false" href="#">Contact Us</a>
+                    </li>
+                </ul>
             </div>
-            <div class="flex items-center space-x-16">
+
+            <!-- <div class="flex items-center space-x-16">
                 <div>
                     <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition">Connect with
                         us</button>
                 </div>
-                <div>
-                    <button id="hamburger-btn" class="cursor-pointer">
-                        <div class="space-y-2">
-                            <div class="w-8 h-0.5 bg-gray-600"></div>
-                            <div class="w-8 h-0.5 bg-gray-600"></div>
-                            <div class="w-8 h-0.5 bg-gray-600"></div>
-                        </div>
-                    </button>
-                </div>
-            </div>
+            </div> -->
 
         </nav>
     </header>
 
     <!-- hero -->
     <div
-        class="container mx-auto px-4 lg:px-20 md:h-[calc(100vh_-_100px)] md:grid grid-cols-2 justify-center items-center  ">
+        class="container mx-auto my-16 px-4 lg:px-20 md:h-[calc(100vh_-_100px)] md:grid grid-cols-2 justify-center items-center  ">
         <div class="md:flex flex-col justify-center">
             <div class="flex items-center rounded-xl bg-slate-300 w-max p-2 px-4 ">
                 <div class="bg-blue-500 w-4 h-4 rounded-full"></div>
@@ -290,7 +344,8 @@
         </div>
 
         <div class="flex justify-center">
-            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition">See all projects</button>
+            <button class="btn btn-primary shadow-lg hover:-translate-y-0.5 transform transition">See all
+                projects</button>
         </div>
     </div>
 
