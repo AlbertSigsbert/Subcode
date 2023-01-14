@@ -4,31 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subcode Africa</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
     <script src="https://unpkg.com/alpinejs" defer></script>
     <style>
         [x-cloak] {
             display: none;
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { inter: ['"Inter"', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+    <title>Subcode Africa</title>
 </head>
 
-<body class="font-inter">
+<body>
     <!-- Navbar -->
     <header x-data="{open:false}" class="relative shadow py-2 font-inter">
         <nav aria-label="main-nav" class="mx-[6%] my-4 flex items-center justify-between">
@@ -40,7 +27,7 @@
             <!-- Large Sreen Nav Items -->
             <ul class="hidden md:flex items-center  space-x-8 lg:space-x-16">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="./index.html">Home</a>
                 </li>
                 <li>
                     <a href="./about.html">About Us</a>
@@ -79,7 +66,7 @@
                 </div>
                 <ul class="flex flex-col space-y-8 pt-8">
                     <li>
-                        <a @click="open = false" href="#">Home</a>
+                        <a @click="open = false" href="./index.html">Home</a>
                     </li>
                     <li>
                         <a @click="open = false" href="./about.html">About Us</a>
@@ -224,13 +211,13 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Our Company</h2>
                     <ul class="text-gray-600">
                         <li class="mb-4">
-                            <a href="/about.html" class="hover:underline">About Us</a>
+                            <a href="./about.html" class="hover:underline">About Us</a>
                         </li>
                         <li class="mb-4">
-                            <a href="/service.html" class="hover:underline">Services</a>
+                            <a href="./service.html" class="hover:underline">Services</a>
                         </li>
                         <li>
-                            <a href="/contact.html" class="hover:underline">Contact Us</a>
+                            <a href="./contact.html" class="hover:underline">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -238,10 +225,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Follow us</h2>
                     <ul class="text-gray-600">
                         <li class="mb-4">
-                            <a href="/" class="hover:underline ">Github</a>
+                            <a href="#" class="hover:underline ">Github</a>
                         </li>
                         <li>
-                            <a href="/" class="hover:underline">Discord</a>
+                            <a href="#" class="hover:underline">Discord</a>
                         </li>
                     </ul>
                 </div>
